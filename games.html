@@ -9,8 +9,9 @@
     />
     <title>GameHub | List of games</title>
     <link href="styles.css" rel="stylesheet" />
+    <script src="games.js"></script>
   </head>
-  <body>
+  <body onload="BuildHtmlForGames()">
     <header class="width">
       <section>
         <a href="index.html">
@@ -67,52 +68,7 @@
         <h2>Categories</h2>
       </section>
       <section>
-        <a href="Checkoutpage.html">
-          <div class="grid">
-            <div class="game-with-category">
-              <p class="border button-small">Fantasy</p>
-              <img
-                src="images/ring.jpeg"
-                alt="Picture of Forge Legend Playbox game"
-              />
-            </div>
-            <div class="game-with-category">
-              <p class="border button-small">Arcade</p>
-              <img
-                src="images/furious.jpeg"
-                alt="Picture of Furious Playbox game"
-              />
-            </div>
-            <div class="game-with-category">
-              <p class="border button-small">Cyberpunk</p>
-              <img
-                src="images/cyber.jpeg"
-                alt="Picture of Cyberpunk Playbox game"
-              />
-            </div>
-            <div class="game-with-category">
-              <p class="border button-small">Adventure</p>
-              <img
-                src="images/assassin.jpeg"
-                alt="Picture of Assassin Playbox game"
-              />
-            </div>
-            <div class="game-with-category">
-              <p class="border button-small">Horror</p>
-              <img
-                src="images/black.jpeg"
-                alt="Picture of Black Playbox game"
-              />
-            </div>
-            <div class="game-with-category">
-              <p class="border button-small">Racing</p>
-              <img
-                src="images/racing.jpeg"
-                alt="Picture of Racing Playbox game"
-              />
-            </div>
-          </div>
-        </a>
+        <div class="grid" id="api-output"></div>
       </section>
     </main>
     <div class="width-70">

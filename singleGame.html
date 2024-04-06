@@ -9,8 +9,9 @@
     />
     <title>GameHub | Game page</title>
     <link href="styles.css" rel="stylesheet" />
+    <script src="singleGame.js"></script>
   </head>
-  <body>
+  <body onload="BuildHtmlForGame()">
     <header class="width">
       <section>
         <a href="index.html">
@@ -53,11 +54,6 @@
     </header>
     <main class="width-70">
       <section class="hero-flex">
-        <a href="Checkoutpage.html">
-          <div class="hero-gamepage-image-button border width-400"></div>
-        </a>
-      </section>
-      <section class="hero-flex">
         <div class="hero-flex flex-horizontal">
           <p class="border hero-gamepage-text-button">399 NOK</p>
         </div>
@@ -69,7 +65,7 @@
           </div>
         </a>
       </section>
-      <section class="width-70 line">
+      <section class="width-70 line" id="api-output">
         <p>
           Winner of more than 200 Game of the Year Awards, Forge Legend brings
           the epic fantasy to life in stunning detail. Forge Legend includes the
@@ -79,17 +75,17 @@
         </p>
       </section>
       <section class="hero-flex">
-        <a href="Listofgames.html">
+        <a href="games.html">
           <div class="game-with-category hero-flex flex-horizontal">
             <p class="border button-small button-white">RPG</p>
           </div>
         </a>
-        <a href="Listofgames.html">
+        <a href="games.html">
           <div class="game-with-category hero-flex flex-horizontal">
             <p class="border button-small button-white">Fantasy</p>
           </div>
         </a>
-        <a href="Listofgames.html">
+        <a href="games.html">
           <div class="game-with-category hero-flex flex-horizontal">
             <p class="border button-small button-white">
               Single<br />
