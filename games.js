@@ -30,7 +30,7 @@ async function BuildHtmlForGames(){
             return html;
         })
         .catch((err) => {
-            return "Failed getting data: " + err;
+            return "Oops, we encountered a problem. Please try again later.";
         })
 
     output.innerHTML = res.join(" ");
