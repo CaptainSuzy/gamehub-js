@@ -1,8 +1,9 @@
 async function BuildHtmlForGames(){
+    const output = document.getElementById("api-output");
+    output.innerHTML = "";
+    output.classList.add("spinner");
+
     const url = "https://v2.api.noroff.dev/gamehub";
-
-    document.getElementById("api-output").innerHTML = "spinner";
-
     var res = await fetch(url)
         .then((res) => {
             if (!res.ok)
@@ -18,7 +19,7 @@ async function BuildHtmlForGames(){
             {
                 return `<div class='game-with-category' id='${game.id}'>
                 <p class='border button-small'>${game.genre}</p>
-                <a href='gamepage.html?id=${game.id}'>
+                <a href='singleGame.html?id=${game.id}'>
                 <img
                   src='${game.image.url}'
                   alt='${game.image.alt}'
@@ -29,9 +30,9 @@ async function BuildHtmlForGames(){
             return html;
         })
         .catch((err) => {
-            document.getElementById("api-output").innerHTML = "Failed getting data: " + err;
-            return;
+            return "Failed getting data: " + err;
         })
 
-        document.getElementById("api-output").innerHTML = res.join(" ");
-        }
+    output.innerHTML = res.join(" ");
+    output.classList.remove("spinner");
+    }

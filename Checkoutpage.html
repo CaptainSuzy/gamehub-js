@@ -9,8 +9,9 @@
     />
     <title>GameHub | Checkout</title>
     <link href="styles.css" rel="stylesheet" />
+    <script src="checkoutPage.js"></script>
   </head>
-  <body>
+  <body onload="BuildHtmlForGame()">
     <header class="width">
       <section>
         <a href="index.html">
@@ -22,11 +23,6 @@
         </a>
       </section>
       <div class="nav-header-flex">
-        <img
-          src="images/SearchIconWhiteTransparent.png"
-          alt="Magnifying glass icon"
-          class="header-icon"
-        />
         <a href="Checkoutpage.html">
           <img
             src="images/ShoppingCartWhiteTransparent.png"
@@ -55,16 +51,7 @@
       <section class="line">
         <h1>Cart</h1>
       </section>
-      <section class="hero-flex">
-        <a href="Gamepage.html">
-          <div class="hero-gamepage-image-button border width-400"></div>
-        </a>
-        <div class="hero-flex flex-vertical align-normal">
-          <h1>Forge Legend</h1>
-          <h2>399 NOK</h2>
-          <p class="border button-small">Total: 399 NOK</p>
-        </div>
-      </section>
+      <div id="api-output"></div>
       <section class="border padding-3em">
         <div>
           <h2>Payment method</h2>

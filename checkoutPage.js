@@ -33,27 +33,12 @@ async function BuildHtmlForGame() {
 
                 <h1>Title: ${game.title}</h1>
                 <h2>Price: ${priceInfo}</h2>
-                <p>Description: ${game.description}</p>
-                <p>Genre: ${game.genre}</p>
-                <p>Released: ${game.released}</p>
-                <p>Age rarting: ${game.ageRating}</p>
-              </div>
-              
-              <section>
-              <a href='checkoutPage.html?id=${game.id}'>
-                <div class="hero-flex flex-horizontal">
-                  <p class="border hero-gamepage-text-button button-white">
-                    Add to cart
-                  </p>
-                </div>
-              </a>
-            </section>`
-
+              </div>`
         })
         .catch((err) => {
-            return "Failed getting data: " + err;
+            document.getElementById("api-output").innerHTML = "Failed getting data: " + err;
+            return;
         })
 
     document.getElementById("api-output").innerHTML = res;
-    document.getElementById("api-output")
     }

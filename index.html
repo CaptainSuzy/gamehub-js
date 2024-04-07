@@ -9,8 +9,9 @@
     />
     <title>GameHub | Home</title>
     <link href="styles.css" rel="stylesheet" />
+    <script src="games.js"></script>
   </head>
-  <body>
+  <body onload="BuildHtmlForGames()">
     <header>
       <section>
         <a href="index.html">
@@ -22,11 +23,6 @@
         </a>
       </section>
       <div class="nav-header-flex">
-        <img
-          src="images//SearchIconWhiteTransparent.png"
-          alt="Magnifying glass icon"
-          class="header-icon"
-        />
         <a href="Checkoutpage.html">
           <img
             src="images/ShoppingCartWhiteTransparent.png"
@@ -54,7 +50,7 @@
     <main class="width-70">
       <div class="container">
         <section>
-          <a href="Gamepage.html">
+          <a href="games.html">
             <img
               src="images/spacewintersale.jpg"
               alt="Logo for the game Space War with Winter sale and Up to 90%"
@@ -67,36 +63,12 @@
       </div>
       <div class="line"></div>
       <section>
-        <a href="Gamepage.html">
-          <div class="grid">
-            <img
-              src="images/ring.jpeg"
-              alt="Picture of Forge Legend Playbox game"
-            />
-            <img
-              src="images/furious.jpeg"
-              alt="Picture of Furious Playbox game"
-            />
-            <img
-              src="images/cyber.jpeg"
-              alt="Picture of Cyberpunk Playbox game"
-            />
-            <img
-              src="images/assassin.jpeg"
-              alt="Picture of Assassin Playbox game"
-            />
-            <img src="images/black.jpeg" alt="Picture of Black Playbox game" />
-            <img
-              src="images/racing.jpeg"
-              alt="Picture of Racing Playbox game"
-            />
-          </div>
+        <a href="games.html">
+          <p class="border button-small">Browse categories</p>
         </a>
       </section>
       <section>
-        <a href="Listofgames.html">
-          <p class="border button-small">Browse categories</p>
-        </a>
+        <div class="grid" id="api-output"></div>
       </section>
     </main>
     <div class="width-70">
