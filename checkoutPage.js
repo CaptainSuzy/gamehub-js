@@ -1,8 +1,11 @@
 async function BuildHtmlForGame() {
+    const output = document.getElementById("api-output");
+    output.innerHTML = "";
+    output.classList.add("spinner");
+
     const id = new URLSearchParams(window.location.search).get("id");
     const url = "https://v2.api.noroff.dev/gamehub/" + id;
 
-    document.getElementById("api-output").innerHTML = "spinner";
 
     var res = await fetch(url)
         .then((res) => {
@@ -36,9 +39,9 @@ async function BuildHtmlForGame() {
               </div>`
         })
         .catch((err) => {
-            document.getElementById("api-output").innerHTML = "Failed getting data: " + err;
-            return;
+            return "Failed getting data: " + err;
         })
 
-    document.getElementById("api-output").innerHTML = res;
+    output.innerHTML = res;
+    output.classList.remove("spinner");
     }
