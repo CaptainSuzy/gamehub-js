@@ -58,6 +58,5 @@ async function BuildHtmlForGame() {
         })
 
     output.innerHTML = res;
-    output
     output.classList.remove("spinner");
     }
