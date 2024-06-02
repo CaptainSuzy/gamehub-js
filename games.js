@@ -3,6 +3,8 @@ async function BuildHtmlForGames(){
     output.innerHTML = "";
     output.classList.add("spinner");
 
+    const genre = new URLSearchParams(window.location.search).get("genre");
+
     const url = "https://v2.api.noroff.dev/gamehub";
     var res = await fetch(url)
         .then((res) => {
@@ -17,15 +19,22 @@ async function BuildHtmlForGames(){
             var html =
             games.data.map((game) => 
             {
+                if (genre !== null && genre !== "" && game.genre !== genre) return;
+                
                 return `<div class='game-with-category' id='${game.id}'>
-                <p class='border button-small'>${game.genre}</p>
+                <a href="games.html?genre=${game.genre}">
+                <div class="game-with-category hero-flex flex-horizontal">
+                <p class="border button-small button-white">${game.genre}</p>
+              </div>
                 <a href='singleGame.html?id=${game.id}'>
                 <img
                   src='${game.image.url}'
                   alt='${game.image.alt}'
                 />
                 </a>
-              </div>`
+              </div>
+              
+              </a>`
             })
             return html;
         })

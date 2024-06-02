@@ -50,7 +50,18 @@ async function BuildHtmlForGame() {
                   </p>
                 </div>
               </a>
-            </section>`
+            </section>
+            
+            <div class="line"></div>
+
+            <section>
+            <a href="games.html?genre=${game.genre}">
+            <div class="game-with-category hero-flex flex-horizontal">
+              <p class="border button-small button-white">${game.genre}</p>
+            </div>
+          </a>
+          </section>  
+            `
 
         })
         .catch((err) => {
