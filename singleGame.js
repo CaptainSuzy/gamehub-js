@@ -23,6 +23,13 @@ async function BuildHtmlForGame() {
             let priceInfo = game.price;
             if (game.onSale)
                 priceInfo = `<strike>${game.price}</strike> <strong>On sale! ${game.discountedPrice}</strong>`;
+            
+            let altText = game.image.alt;
+            if (game.image.alt === null || game.image.alt === "")
+                
+              {
+              altText = "Picture of " + game.title;
+            }
 
                 return `<div class='game-details' id='${game.id}'>
 
@@ -30,7 +37,7 @@ async function BuildHtmlForGame() {
                 <section class="hero-flex">
                 <img
                   src='${game.image.url}'
-                  alt='${game.image.alt}'
+                  alt='${altText}'
                 /> 
               </section>
 

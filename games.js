@@ -21,6 +21,13 @@ async function BuildHtmlForGames(){
             {
                 if (genre !== null && genre !== "" && game.genre !== genre) return;
                 
+                let altText = game.image.alt;
+                if (game.image.alt === null || game.image.alt === "")
+                
+                  {
+                  altText = "Picture of " + game.title;
+                }
+
                 return `<div class='game-with-category' id='${game.id}'>
                 <a href="games.html?genre=${game.genre}">
                 <div class="game-with-category hero-flex flex-horizontal">
@@ -29,7 +36,7 @@ async function BuildHtmlForGames(){
                 <a href='singleGame.html?id=${game.id}'>
                 <img
                   src='${game.image.url}'
-                  alt='${game.image.alt}'
+                  alt='${altText}'
                 />
                 </a>
               </div>
