@@ -4,7 +4,7 @@ async function BuildHtmlForGame() {
     output.classList.add("spinner");
 
     const id = new URLSearchParams(window.location.search).get("id");
-    const url = "https://v2.api.noroff.dev/gamehub/" + id;
+    const url = "https://candybandy.no/wp-json/wc/v3/products" + id;
 
 
     var res = await fetch(url)
@@ -28,7 +28,7 @@ async function BuildHtmlForGame() {
             if (game.image.alt === null || game.image.alt === "")
                 
               {
-              altText = "Picture of " + game.title;
+              altText = "Picture of " + game.name;
             }
 
                 return `<div class='game-details' id='${game.id}'>
@@ -41,10 +41,10 @@ async function BuildHtmlForGame() {
                 /> 
               </section>
 
-                <h1>Title: ${game.title}</h1>
+                <h1>Title: ${game.name}</h1>
                 <h2>Price: ${priceInfo}</h2>
                 <p>Description: ${game.description}</p>
-                <p>Genre: ${game.genre}</p>
+                <p>Genre: ${game.tag}</p>
                 <p>Released: ${game.released}</p>
                 <p>Age rarting: ${game.ageRating}</p>
               </div>
@@ -62,9 +62,9 @@ async function BuildHtmlForGame() {
             <div class="line"></div>
 
             <section>
-            <a href="games.html?genre=${game.genre}">
+            <a href="games.html?genre=${game.tag}">
             <div class="game-with-category hero-flex flex-horizontal">
-              <p class="border button-small button-white">${game.genre}</p>
+              <p class="border button-small button-white">${game.tag}</p>
             </div>
           </a>
           </section>  

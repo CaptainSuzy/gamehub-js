@@ -25,7 +25,7 @@ async function BuildHtmlForGames(){
                 if (game.image.alt === null || game.image.alt === "")
                 
                   {
-                  altText = "Picture of " + game.title;
+                  altText = "Picture of " + game.name;
                 }
 
                 return `<div class='game-with-category' id='${game.id}'>
@@ -36,7 +36,8 @@ async function BuildHtmlForGames(){
                 <a href='singleGame.html?id=${game.id}'>
                 <img
                   src='${game.image.url}'
-                  alt='${altText}'
+                  alt='${altText}',
+                  class='thumbnail'
                 />
                 </a>
               </div>
