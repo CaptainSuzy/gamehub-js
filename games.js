@@ -3,9 +3,9 @@ async function BuildHtmlForGames(){
     output.innerHTML = "";
     output.classList.add("spinner");
 
-    const genre = new URLSearchParams(window.location.search).get("genre");
+    const tag = new URLSearchParams(window.location.search).get("tag");
 
-    const url = "https://v2.api.noroff.dev/gamehub";
+    const url = "https://candybandy.no/wp-json/wc/v3/products";
     var res = await fetch(url)
         .then((res) => {
             if (!res.ok)
@@ -19,7 +19,7 @@ async function BuildHtmlForGames(){
             var html =
             games.data.map((game) => 
             {
-                if (genre !== null && genre !== "" && game.genre !== genre) return;
+                if (tag !== null && tag !== "" && game.tag !== tag) return;
                 
                 let altText = game.image.alt;
                 if (game.image.alt === null || game.image.alt === "")
@@ -29,9 +29,9 @@ async function BuildHtmlForGames(){
                 }
 
                 return `<div class='game-with-category' id='${game.id}'>
-                <a href="games.html?genre=${game.genre}">
+                <a href="games.html?tag=${game.tag}">
                 <div class="game-with-category hero-flex flex-horizontal">
-                <p class="border button-small button-white">${game.genre}</p>
+                <p class="border button-small button-white">${game.tag}</p>
               </div>
                 <a href='singleGame.html?id=${game.id}'>
                 <img
